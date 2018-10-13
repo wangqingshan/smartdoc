@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.dao.TycDocMapper" >
+  <resultMap id="BaseResultMap" type="com.smart.domain.TycDoc" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="doc_title" property="docTitle" jdbcType="VARCHAR" />
+    <result column="xy_dm" property="xyDm" jdbcType="VARCHAR" />
+    <result column="register_no" property="registerNo" jdbcType="VARCHAR" />
+    <result column="zzjg_dm" property="zzjgDm" jdbcType="VARCHAR" />
+    <result column="gp_dm" property="gpDm" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="com_type" property="comType" jdbcType="VARCHAR" />
+    <result column="hy" property="hy" jdbcType="VARCHAR" />
+    <result column="fd_dbr" property="fdDbr" jdbcType="VARCHAR" />
+    <result column="zczb" property="zczb" jdbcType="VARCHAR" />
+    <result column="zc_time" property="zcTime" jdbcType="TIMESTAMP" />
+    <result column="jyfw" property="jyfw" jdbcType="VARCHAR" />
+    <result column="addr" property="addr" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="com_net" property="comNet" jdbcType="VARCHAR" />
+    <result column="com_stat" property="comStat" jdbcType="VARCHAR" />
+    <result column="cre_time" property="creTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, doc_title, xy_dm, register_no, zzjg_dm, gp_dm, province, city, com_type, hy, 
+    fd_dbr, zczb, zc_time, jyfw, addr, phone, tel, email, com_net, com_stat, cre_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_wiki_doc_jinji_tyc
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_wiki_doc_jinji_tyc
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.smart.domain.TycDoc" >
+    insert into t_wiki_doc_jinji_tyc (id, doc_title, xy_dm, 
+      register_no, zzjg_dm, gp_dm, 
+      province, city, com_type, 
+      hy, fd_dbr, zczb, zc_time, 
+      jyfw, addr, phone, 
+      tel, email, com_net, 
+      com_stat, cre_time)
+    values (#{id,jdbcType=INTEGER}, #{docTitle,jdbcType=VARCHAR}, #{xyDm,jdbcType=VARCHAR}, 
+      #{registerNo,jdbcType=VARCHAR}, #{zzjgDm,jdbcType=VARCHAR}, #{gpDm,jdbcType=VARCHAR}, 
+      #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{comType,jdbcType=VARCHAR}, 
+      #{hy,jdbcType=VARCHAR}, #{fdDbr,jdbcType=VARCHAR}, #{zczb,jdbcType=VARCHAR}, #{zcTime,jdbcType=TIMESTAMP}, 
+      #{jyfw,jdbcType=VARCHAR}, #{addr,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{tel,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{comNet,jdbcType=VARCHAR}, 
+      #{comStat,jdbcType=VARCHAR}, #{creTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.smart.domain.TycDoc" >
+    insert into t_wiki_doc_jinji_tyc
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="docTitle != null" >
+        doc_title,
+      </if>
+      <if test="xyDm != null" >
+        xy_dm,
+      </if>
+      <if test="registerNo != null" >
+        register_no,
+      </if>
+      <if test="zzjgDm != null" >
+        zzjg_dm,
+      </if>
+      <if test="gpDm != null" >
+        gp_dm,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="comType != null" >
+        com_type,
+      </if>
+      <if test="hy != null" >
+        hy,
+      </if>
+      <if test="fdDbr != null" >
+        fd_dbr,
+      </if>
+      <if test="zczb != null" >
+        zczb,
+      </if>
+      <if test="zcTime != null" >
+        zc_time,
+      </if>
+      <if test="jyfw != null" >
+        jyfw,
+      </if>
+      <if test="addr != null" >
+        addr,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="comNet != null" >
+        com_net,
+      </if>
+      <if test="comStat != null" >
+        com_stat,
+      </if>
+      <if test="creTime != null" >
+        cre_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="docTitle != null" >
+        #{docTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="xyDm != null" >
+        #{xyDm,jdbcType=VARCHAR},
+      </if>
+      <if test="registerNo != null" >
+        #{registerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="zzjgDm != null" >
+        #{zzjgDm,jdbcType=VARCHAR},
+      </if>
+      <if test="gpDm != null" >
+        #{gpDm,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="comType != null" >
+        #{comType,jdbcType=VARCHAR},
+      </if>
+      <if test="hy != null" >
+        #{hy,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDbr != null" >
+        #{fdDbr,jdbcType=VARCHAR},
+      </if>
+      <if test="zczb != null" >
+        #{zczb,jdbcType=VARCHAR},
+      </if>
+      <if test="zcTime != null" >
+        #{zcTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jyfw != null" >
+        #{jyfw,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null" >
+        #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="comNet != null" >
+        #{comNet,jdbcType=VARCHAR},
+      </if>
+      <if test="comStat != null" >
+        #{comStat,jdbcType=VARCHAR},
+      </if>
+      <if test="creTime != null" >
+        #{creTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.smart.domain.TycDoc" >
+    update t_wiki_doc_jinji_tyc
+    <set >
+      <if test="docTitle != null" >
+        doc_title = #{docTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="xyDm != null" >
+        xy_dm = #{xyDm,jdbcType=VARCHAR},
+      </if>
+      <if test="registerNo != null" >
+        register_no = #{registerNo,jdbcType=VARCHAR},
+      </if>
+      <if test="zzjgDm != null" >
+        zzjg_dm = #{zzjgDm,jdbcType=VARCHAR},
+      </if>
+      <if test="gpDm != null" >
+        gp_dm = #{gpDm,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="comType != null" >
+        com_type = #{comType,jdbcType=VARCHAR},
+      </if>
+      <if test="hy != null" >
+        hy = #{hy,jdbcType=VARCHAR},
+      </if>
+      <if test="fdDbr != null" >
+        fd_dbr = #{fdDbr,jdbcType=VARCHAR},
+      </if>
+      <if test="zczb != null" >
+        zczb = #{zczb,jdbcType=VARCHAR},
+      </if>
+      <if test="zcTime != null" >
+        zc_time = #{zcTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="jyfw != null" >
+        jyfw = #{jyfw,jdbcType=VARCHAR},
+      </if>
+      <if test="addr != null" >
+        addr = #{addr,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="comNet != null" >
+        com_net = #{comNet,jdbcType=VARCHAR},
+      </if>
+      <if test="comStat != null" >
+        com_stat = #{comStat,jdbcType=VARCHAR},
+      </if>
+      <if test="creTime != null" >
+        cre_time = #{creTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.smart.domain.TycDoc" >
+    update t_wiki_doc_jinji_tyc
+    set doc_title = #{docTitle,jdbcType=VARCHAR},
+      xy_dm = #{xyDm,jdbcType=VARCHAR},
+      register_no = #{registerNo,jdbcType=VARCHAR},
+      zzjg_dm = #{zzjgDm,jdbcType=VARCHAR},
+      gp_dm = #{gpDm,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      com_type = #{comType,jdbcType=VARCHAR},
+      hy = #{hy,jdbcType=VARCHAR},
+      fd_dbr = #{fdDbr,jdbcType=VARCHAR},
+      zczb = #{zczb,jdbcType=VARCHAR},
+      zc_time = #{zcTime,jdbcType=TIMESTAMP},
+      jyfw = #{jyfw,jdbcType=VARCHAR},
+      addr = #{addr,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      com_net = #{comNet,jdbcType=VARCHAR},
+      com_stat = #{comStat,jdbcType=VARCHAR},
+      cre_time = #{creTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
