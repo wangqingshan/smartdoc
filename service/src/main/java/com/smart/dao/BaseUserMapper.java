@@ -1,6 +1,7 @@
 package com.smart.dao;
 
 import com.smart.domain.BaseUser;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,4 +19,6 @@ public interface BaseUserMapper {
     int updateByPrimaryKey(BaseUser record);
 
     List<BaseUser> selectAllUser();
+
+    BaseUser getUserByNameAndPsw(@Param("email")String email,@Param("password")String password);
 }

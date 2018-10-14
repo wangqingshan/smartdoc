@@ -7,6 +7,8 @@ import com.smart.utils.ResultData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * BaseUserServiceImpl
  *
@@ -36,12 +38,14 @@ public class BaseUserServiceImpl implements BaseUserService {
         return result;
     }
 
+    public List<BaseUser> selectAllUser(){
+        return baseUserMapper.selectAllUser();
+    }
 
-
-
-
-
-
+    @Override
+    public BaseUser getUserByNameAndPsw(String email, String password) {
+        return baseUserMapper.getUserByNameAndPsw(email,password);
+    }
 
 
 }

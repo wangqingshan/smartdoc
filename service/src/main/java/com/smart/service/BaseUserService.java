@@ -3,6 +3,8 @@ package com.smart.service;
 import com.smart.domain.BaseUser;
 import com.smart.utils.ResultData;
 
+import java.util.List;
+
 /**
  * BaseUserService
  *
@@ -18,5 +20,7 @@ public interface BaseUserService {
     ResultData<Integer> addUser(BaseUser user);
 
 
+    List<BaseUser> selectAllUser();
 
+    BaseUser getUserByNameAndPsw(String email,String password);
 }

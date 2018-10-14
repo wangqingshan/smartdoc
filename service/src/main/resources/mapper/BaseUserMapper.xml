@@ -22,7 +22,11 @@
     cre_user, cre_time, mod_user, mod_time, del_flag
   </sql>
   <select id="selectAllUser" resultMap="BaseResultMap">
-    select <include refid="Base_Column_List" /> from user
+    select <include refid="Base_Column_List" /> from t_base_user
+  </select>
+
+  <select id="getUserByNameAndPsw" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" /> from t_base_user where  email = #{email} and  password = #{password}
   </select>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
