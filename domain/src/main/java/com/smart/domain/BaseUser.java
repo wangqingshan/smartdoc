@@ -21,11 +21,11 @@ public class BaseUser {
 
     private Integer aware;
 
-    private Integer creUser;
+    private String creUser;
 
     private Date creTime;
 
-    private Integer modUser;
+    private String modUser;
 
     private Date modTime;
 
@@ -103,11 +103,11 @@ public class BaseUser {
         this.aware = aware;
     }
 
-    public Integer getCreUser() {
+    public String getCreUser() {
         return creUser;
     }
 
-    public void setCreUser(Integer creUser) {
+    public void setCreUser(String creUser) {
         this.creUser = creUser;
     }
 
@@ -119,11 +119,11 @@ public class BaseUser {
         this.creTime = creTime;
     }
 
-    public Integer getModUser() {
+    public String getModUser() {
         return modUser;
     }
 
-    public void setModUser(Integer modUser) {
+    public void setModUser(String modUser) {
         this.modUser = modUser;
     }
 
