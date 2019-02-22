@@ -12,9 +12,9 @@ spring:
       filters: stat
       driver-class-name: com.mysql.jdbc.Driver
       #基本属性
-      url: jdbc:mysql://localhost:3306/doc?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      url: jdbc:mysql://134.175.80.11:3306/work?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
       username: root
-      password: root
+      password: Wqs2019@#
       #配置初始化大小/最小/最大
       initial-size: 1
       min-idle: 1
