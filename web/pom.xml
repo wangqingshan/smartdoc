@@ -112,7 +112,79 @@
 
     </dependencies>
 
+
+
+
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <pom.env>dev</pom.env>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>APP_ENV</name>
+                    <value>dev11</value>
+                </property>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <pom.env>test</pom.env>
+            </properties>
+            <activation>
+                <property>
+                    <name>APP_ENV</name>
+                    <value>test</value>
+                </property>
+            </activation>
+        </profile>
+        <profile>
+            <id>idc_test</id>
+            <properties>
+                <pom.env>idc_test</pom.env>
+            </properties>
+            <activation>
+                <property>
+                    <name>APP_ENV</name>
+                    <value>idc_test</value>
+                </property>
+            </activation>
+        </profile>
+        <profile>
+            <id>idc_product</id>
+            <properties>
+                <pom.env>idc_product</pom.env>
+            </properties>
+            <activation>
+                <property>
+                    <name>APP_ENV</name>
+                    <value>idc_product</value>
+                </property>
+            </activation>
+        </profile>
+    </profiles>
+
+
     <build>
+
+        <filters>
+            <filter>src/main/resources/application.yml</filter>
+            <filter>src/main/resources/config/application-${pom.env}.yml</filter>
+        </filters>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -121,15 +193,15 @@
                     <!-- 没有该配置,devtools不生效 -->
                     <fork>true</fork>
                     <!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>com.demo.WebApplication</mainClass>
+                    <mainClass>com.smart.WebApplication</mainClass>
                 </configuration>
-                <!--	<executions>
+                	<executions>
                         <execution>
                             <goals>
-                                <goal>repackage</goal>可以把依赖的包都打包到生成的Jar包中
+                                <goal>repackage</goal><!--可以把依赖的包都打包到生成的Jar包中-->
                             </goals>
                         </execution>
-                    </executions>-->
+                    </executions>
             </plugin>
 
             <!-- 如果打包报没有web.xml,加上下面的插件 -->
@@ -156,6 +228,18 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <useDefaultDelimiters>true</useDefaultDelimiters>
+                </configuration>
+            </plugin>
+
+
+
         </plugins>
     </build>
 
