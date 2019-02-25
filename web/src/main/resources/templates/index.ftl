@@ -126,9 +126,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">存货</span><span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="form_basic.html">基本表单</a>
+                        <li><a class="J_menuItem" href="${ctx}/admin/Product/insert_product.html">存货录入</a>
                         </li>
                         <li><a class="J_menuItem" href="form_validate.html">表单验证</a>
                         </li>
