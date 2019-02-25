@@ -235,6 +235,15 @@
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <useDefaultDelimiters>true</useDefaultDelimiters>
+
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+
                 </configuration>
             </plugin>
 
